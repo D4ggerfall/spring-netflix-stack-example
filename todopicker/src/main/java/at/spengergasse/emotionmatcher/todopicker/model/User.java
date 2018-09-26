@@ -1,29 +1,33 @@
-package at.spengergasse.emotionmatcher.emotionmatchermain.model;
+package at.spengergasse.emotionmatcher.todopicker.model;
 
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.io.Serializable;
-import java.util.Optional;
+import java.time.LocalDate;
 
-
+@Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode
 @ToString
-@Setter
 @Builder
 @Entity
-public class Emotion implements Serializable
+public class User
 {
     @Id
-    @Getter
-    public long id;
+    @GeneratedValue
+    private long id;
 
-    @Getter
-    public int emotionlevel;
+    private String firstname;
+
+    private String lastname;
+
+    private LocalDate birthday;
+
+    private int guest;
 
 
 }
