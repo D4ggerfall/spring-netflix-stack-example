@@ -18,10 +18,9 @@ public class ToDoPicker implements Serializable
 {
     private Task task;
 
-  //  private User user;
-
-
+    private User user;
 
     private String[] customlist;
+
 
 }

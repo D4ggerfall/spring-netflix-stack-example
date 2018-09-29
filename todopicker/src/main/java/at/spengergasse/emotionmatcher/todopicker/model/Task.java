@@ -15,13 +15,15 @@ import java.time.LocalDate;
 @Entity
 public class Task
 {
-    private String task;
+    private String title;
+
+    private String description;
 
     private int importance;
-
-    private User user;
 
     private LocalDate date;
 
     private String location;
+
+    private User user;
 }
