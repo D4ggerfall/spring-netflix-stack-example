@@ -3,6 +3,8 @@ package at.spengergasse.emotionmatcher.todopicker.model;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Getter
@@ -15,6 +17,10 @@ import java.time.LocalDate;
 @Entity
 public class Task
 {
+    @Id
+    @GeneratedValue
+    private long id;
+
     private String title;
 
     private String description;

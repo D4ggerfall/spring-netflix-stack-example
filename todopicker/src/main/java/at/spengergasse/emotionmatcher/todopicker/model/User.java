@@ -29,5 +29,8 @@ public class User
 
     private int guest;
 
+    private Task[] tasklist;
+
+
 
 }
