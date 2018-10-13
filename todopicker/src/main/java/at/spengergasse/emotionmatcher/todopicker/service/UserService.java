@@ -28,9 +28,9 @@ public class UserService
         return userRepository.save(user);
     }
 
-    public void deleteTask(User task)
+    public void deleteUser(User user)
     {
-        userRepository.delete(task);
+        userRepository.delete(user);
     }
 
     public void deletebyId(long id)

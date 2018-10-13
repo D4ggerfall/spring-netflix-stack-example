@@ -2,10 +2,9 @@ package at.spengergasse.emotionmatcher.todopicker.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -29,8 +28,16 @@ public class User
 
     private int guest;
 
-    private Task[] tasklist;
+    private ArrayList<Task> tasklist;
 
+    /*
+    Fragen bzg.Beziehung
+
+    @Getter
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name = "takslist", referencedColumnName = "id")
+    private Task task;
+    */
 
 
 }
