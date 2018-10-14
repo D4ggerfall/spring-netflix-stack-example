@@ -31,5 +31,5 @@ public class Task
 
     private String location;
 
-    private User user;
+ //    private User user;
 }
