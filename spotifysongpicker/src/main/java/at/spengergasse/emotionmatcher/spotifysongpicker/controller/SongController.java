@@ -17,7 +17,7 @@ public class SongController {
     @Autowired
     private SongService songService;
 
-    @GetMapping("/random")
+    @GetMapping("/random/{emotionLevel}")
     public Optional<Song> ramdomSong(@PathVariable(name="emotionLevel") int emotionLevel){
         return songService.randomSongByEmotionLevel(emotionLevel);
     }

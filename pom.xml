@@ -20,7 +20,7 @@
     </build>
     <modules>
         <module>spotifySongPicker</module>
-        <module>toDoTaskPicker</module>
+        <module>todopicker</module>
         <module>emotionmatchermain</module>
     </modules>
     <packaging>pom</packaging>

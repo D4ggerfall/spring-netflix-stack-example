@@ -11,7 +11,6 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
-@Transactional
 public class SongService {
 
     @Autowired
@@ -24,8 +23,7 @@ public class SongService {
     public Optional<Song> randomSongByEmotionLevel(int emotionLevel){
         Random rnd = new Random();
         List<Song> songList = songRepository.findByEmotionLevel(emotionLevel);
-        Optional<Song> result = Optional.of(songList.get(rnd.nextInt(songList.size())));
-        return result;
+        return Optional.of(songList.get(rnd.nextInt(songList.size())));
     }
 
 }

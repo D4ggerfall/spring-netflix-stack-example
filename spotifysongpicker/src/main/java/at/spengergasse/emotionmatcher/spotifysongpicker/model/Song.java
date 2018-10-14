@@ -13,6 +13,7 @@ import java.io.Serializable;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class Song implements Serializable {
 
     @Id
@@ -23,6 +24,6 @@ public class Song implements Serializable {
 
     //could be youtube, spotify, etc.
     private String songLink;
-    //number from 1-5 where 5 is the happiest and 1 is the saddest
+    //number from 1-3 where 3 is the happiest and 1 is the saddest
     private int emotionLevel;
 }
