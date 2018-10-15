@@ -7,9 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import java.time.LocalDate;
-import java.util.Optional;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
@@ -18,9 +16,19 @@ public class TaskRepositoryTest {
     @Autowired
     public TaskRepository taskRepository;
 
+
+
+//    @BeforeClass
+//    public static void dataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("org.h2.Driver");
+//        dataSource.setUrl("jdbc:h2:~/test");
+//        dataSource.setUsername("sa");
+//    }
+
+
     @Test
-    public void addTaskTest()
-    {
+    public void addTaskTest() {
 
         Task task = Task.builder().date(LocalDate.now()).description("This jut a test task")
                 .importance(1).location("Austria")
