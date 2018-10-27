@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Getter
@@ -15,7 +17,8 @@ import java.time.LocalDate;
 @ToString
 @Builder
 @Entity
-public class Task
+@Table(name = "task")
+public class Task  implements Serializable
 {
     @Id
     @GeneratedValue

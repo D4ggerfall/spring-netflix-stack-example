@@ -16,7 +16,8 @@ public class UserController
     public UserService userService;
 
     @GetMapping(path = "/all")
-    public @ResponseBody Iterable<User> findAll()
+    public @ResponseBody
+    Iterable<User> findAll()
     {
         return userService.returnUser();
     }

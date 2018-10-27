@@ -3,6 +3,7 @@ package at.spengergasse.emotionmatcher.todopicker.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -14,7 +15,8 @@ import java.util.ArrayList;
 @ToString
 @Builder
 @Entity
-public class User
+@Table(name = "User")
+public class User  implements Serializable
 {
     @Id
     @GeneratedValue

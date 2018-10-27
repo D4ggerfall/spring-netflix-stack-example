@@ -2,7 +2,9 @@ package at.spengergasse.emotionmatcher.todopicker.controller;
 
 
 import at.spengergasse.emotionmatcher.todopicker.model.Task;
+import at.spengergasse.emotionmatcher.todopicker.model.User;
 import at.spengergasse.emotionmatcher.todopicker.service.TaskService;
+import at.spengergasse.emotionmatcher.todopicker.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
