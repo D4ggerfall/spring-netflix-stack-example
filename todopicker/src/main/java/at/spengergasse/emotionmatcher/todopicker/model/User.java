@@ -30,7 +30,7 @@ public class User  implements Serializable
 
     private int guest;
 
-    private ArrayList<Task> tasklist;
+ //   private ArrayList<Task> tasklist;
 
     /*
     Fragen bzg.Beziehung

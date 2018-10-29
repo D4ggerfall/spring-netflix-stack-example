@@ -21,8 +21,7 @@ public class UserRepositoryTest {
     {
         User user = User.builder().firstname("Baum").guest(0)
                 .birthday(LocalDate.now())
-                .lastname("Tanne")
-                .tasklist(null).build();
+                .lastname("Tanne").build();
 
         userRepository.save(user);
 

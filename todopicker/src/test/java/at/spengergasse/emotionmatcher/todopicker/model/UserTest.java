@@ -21,7 +21,7 @@ public class UserTest
     @Test
     public void userbuildwithDataTest()
     {
-        User user = User.builder().firstname("Baum").guest(0).birthday(LocalDate.now()).lastname("Tanne").tasklist(null).build();
+        User user = User.builder().firstname("Baum").guest(0).birthday(LocalDate.now()).lastname("Tanne").build();
 
         Assert.assertNotNull(user.getId());
     }
@@ -36,7 +36,7 @@ public class UserTest
 
         tasklist.add(task);
 
-        User user = User.builder().firstname("Baum").guest(0).tasklist(tasklist).birthday(LocalDate.now()).lastname("Tanne").tasklist(null).build();
+        User user = User.builder().firstname("Baum").guest(0).birthday(LocalDate.now()).lastname("Tanne").build();
 
         Assert.assertNotNull(user.getId());
     }

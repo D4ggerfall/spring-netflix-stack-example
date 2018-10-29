@@ -2,10 +2,7 @@ package at.spengergasse.emotionmatcher.todopicker.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -34,5 +31,5 @@ public class Task  implements Serializable
 
     private String location;
 
- //    private User user;
+
 }

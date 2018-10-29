@@ -4,10 +4,12 @@ package at.spengergasse.emotionmatcher.todopicker.controller;
 import at.spengergasse.emotionmatcher.todopicker.model.User;
 import at.spengergasse.emotionmatcher.todopicker.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@Controller
 @RestController
 @RequestMapping("/user")
 public class UserController
