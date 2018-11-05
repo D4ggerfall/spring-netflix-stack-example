@@ -58,18 +58,18 @@ public class TaskControllerTest {
         JacksonTester.initFields(this, objectMapper);
     }
 
-    
+
 
     @Test
     public void getPlayerWithIdTest() throws Exception
     {
 
 
-        mockMvc.perform(get("/player/{id}", 12))
+        mockMvc.perform(get("/player/{id}", 1))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk());
 
-        //  verify(playerService).findbyId(12);
+        verify(taskService).findbyId(1);
 
 
 

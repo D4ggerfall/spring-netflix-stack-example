@@ -22,7 +22,7 @@ public class TaskServiceTest {
     @Test
     public void createTaskAndFINDTest()
     {
-        Task task = Task.builder().date(LocalDate.now()).description("This jut a test task")
+        Task task = Task.builder().dateTask(LocalDate.now().toString()).description("This jut a test task")
                 .importance(1).location("Austria")
                 .title("Task Test with a User")
                 .build();
@@ -39,7 +39,7 @@ public class TaskServiceTest {
     @Test
     public void deleteTask()
     {
-        Task task = Task.builder().date(LocalDate.now()).description("This jut a test task")
+        Task task = Task.builder().dateTask(LocalDate.now().toString()).description("This jut a test task")
                 .importance(1).location("Austria")
                 .title("Task Test with a User")
                 .build();

@@ -31,7 +31,7 @@ public class UserTest
     {
         ArrayList tasklist = new ArrayList();
 
-        Task task = Task.builder().date(LocalDate.now()).description("This jut a test task").importance(1).location("Austria")
+        Task task = Task.builder().dateTask(LocalDate.now().toString()).description("This jut a test task").importance(1).location("Austria")
                 .title("Task Tes").build();
 
         tasklist.add(task);

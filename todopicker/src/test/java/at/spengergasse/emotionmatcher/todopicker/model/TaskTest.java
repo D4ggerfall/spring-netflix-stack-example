@@ -10,7 +10,7 @@ public class TaskTest {
     @Test
     public void buildTaskTest()
     {
-        Task task = Task.builder().date(LocalDate.now()).description("This jut a test task")
+        Task task = Task.builder().dateTask(LocalDate.now().toString()).description("This jut a test task")
                 .importance(1).location("Austria")
                 .title("Task Test with a User")
                 .build();

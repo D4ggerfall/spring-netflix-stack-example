@@ -35,7 +35,7 @@ public class TaskRepositoryTest {
     @Test
     public void addTaskTest() {
 
-        Task task = Task.builder().date(LocalDate.now()).description("This is just a test task").importance(1).location("Austria").title("Task Test with a User").build();
+        Task task = Task.builder().dateTask(LocalDate.now().toString()).description("This is just a test task").importance(1).location("Austria").title("Task Test with a User").build();
 
         Task task2 = taskRepository.save(task);
 
@@ -46,7 +46,7 @@ public class TaskRepositoryTest {
     @Test
     public void deleteTaskTest() {
 
-        Task task = Task.builder().date(LocalDate.now()).description("This is just a test task").importance(1).location("Austria").title("Task Test with a User").build();
+        Task task = Task.builder().dateTask(LocalDate.now().toString()).description("This is just a test task").importance(1).location("Austria").title("Task Test with a User").build();
 
         Task task2 = taskRepository.save(task);
 
@@ -63,7 +63,7 @@ public class TaskRepositoryTest {
     @Test
     public void findbyIdTest()
     {
-        Task task = Task.builder().date(LocalDate.now()).description("This is just a test task").importance(1).location("Austria").title("Task Test with a User").build();
+        Task task = Task.builder().dateTask(LocalDate.now().toString()).description("This is just a test task").importance(1).location("Austria").title("Task Test with a User").build();
 
         Task task2 = taskRepository.save(task);
 
