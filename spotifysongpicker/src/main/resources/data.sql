@@ -3,7 +3,7 @@ INSERT INTO song(id, artist, songName, songLink, emotionLevel) VALUES (2,'Fonola
 INSERT INTO song(id, artist, songName, songLink, emotionLevel) VALUES (3,'Coldplay', 'Fun', 'https://www.youtube.com/watch?v=rqCP4Invnrs', 1);
 INSERT INTO song(id, artist, songName, songLink, emotionLevel) VALUES (4,'Toto', 'Africa', 'https://www.youtsube.com/watch?v=FTQbiNvZqaY', 3);
 INSERT INTO song(id, artist, songName, songLink, emotionLevel) VALUES (5,'Ed Sheeran', 'I See Fire', 'https://www.youtube.com/watch?v=2fngvQS_PmQ', 1);
-INSERT INTO song(id, artist, songName, songLink, emotionLevel) VALUES (6,'Alan Walker', 'Faded', 'https://www.youtube.com/watch?v=60ItHLz5WEA', 1);
+INSERT INTO song(id, artist, songName, songLink, emotionLevel) VALUES (6,'Alan Walker', 'Faded', 'https://www.youtube.com/watch?v=60ItHLz5WEA', 2);
 
 
 

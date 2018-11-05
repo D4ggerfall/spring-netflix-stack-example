@@ -40,4 +40,42 @@ public class SongServiceTest {
         Assert.assertTrue(differentSongsPicked);
     }
 
+    //Ensures that at least 2 different songs of emotionlevel category 2 (semisad) are picked
+    @Test
+    public void testRandomCat2SongPicks(){
+        boolean differentSongsPicked = false;
+        Song song1;
+        Song song2;
+
+        while (!differentSongsPicked){
+
+            song1 = songService.randomSongByEmotionLevel(2).get();
+            song2 = songService.randomSongByEmotionLevel(2).get();
+
+            if(!song1.equals(song2)){
+                differentSongsPicked = true;
+            }
+        }
+        Assert.assertTrue(differentSongsPicked);
+    }
+
+    //Ensures that at least 2 different songs of emotionlevel category 3 (happiest) are picked
+    @Test
+    public void testRandomCat3SongPicks(){
+        boolean differentSongsPicked = false;
+        Song song1;
+        Song song2;
+
+        while (!differentSongsPicked){
+
+            song1 = songService.randomSongByEmotionLevel(3).get();
+            song2 = songService.randomSongByEmotionLevel(3).get();
+
+            if(!song1.equals(song2)){
+                differentSongsPicked = true;
+            }
+        }
+        Assert.assertTrue(differentSongsPicked);
+    }
+
 }
