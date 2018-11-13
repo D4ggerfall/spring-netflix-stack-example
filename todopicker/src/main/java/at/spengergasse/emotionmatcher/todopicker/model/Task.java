@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @ToString
 @Builder
 @Entity
-public class Task  implements Serializable
+public class Task implements Serializable
 {
     @Id
     @GeneratedValue
