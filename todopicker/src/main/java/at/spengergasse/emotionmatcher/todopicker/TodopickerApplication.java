@@ -8,7 +8,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-//@EnableEurekaClient
+@EnableEurekaClient
+@EnableCircuitBreaker
 public class TodopickerApplication {
 
     public static void main(String[] args) {
