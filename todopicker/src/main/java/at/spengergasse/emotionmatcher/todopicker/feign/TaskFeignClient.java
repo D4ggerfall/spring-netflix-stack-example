@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(name="task", configuration = TaskFeignConfiguration.class)
+@FeignClient(name="task", configuration = FeignConfiguration.class, fallback = FallbackTask.class) //,url="http://localhost:8082/task/all"
 public interface TaskFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/all")
-    List<Task> findAll();
+    Iterable<Task> findAll();
 
     @RequestLine("/{id}")
     Task findById(@Param("id") long id);

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
-@FeignClient
+@FeignClient(name = "song", fallback = FallbackSong.class, configuration = SongConfiguration.class)
 public interface SongFeignClient {
 
     @GetMapping("/random/{emotionLevel}")

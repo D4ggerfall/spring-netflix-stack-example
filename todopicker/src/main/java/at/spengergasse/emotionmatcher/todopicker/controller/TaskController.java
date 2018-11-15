@@ -17,7 +17,6 @@ public class TaskController
     public TaskService taskService;
 
 
-   @HystrixCommand(fallbackMethod = "defaultFallBack")
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<Task> findAll()
     {
@@ -25,10 +24,6 @@ public class TaskController
     }
 
 
-    public Optional<Task> defaultFallBack(Throwable hystrixCommand)
-    {
-        return taskService.findbyId(1l);
-    }
 
     @GetMapping(path="/{id}")
     public @ResponseBody
