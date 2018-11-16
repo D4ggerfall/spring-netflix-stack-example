@@ -19,7 +19,7 @@ public interface TaskFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/all")
     Iterable<Task> findAll();
 
-    @RequestLine("/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     Task findById(@Param("id") long id);
 
    // @RequestMapping(method = RequestMethod.GET, value = "{id}")

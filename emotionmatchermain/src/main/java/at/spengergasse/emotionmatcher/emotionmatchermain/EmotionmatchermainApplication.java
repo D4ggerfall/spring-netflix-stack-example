@@ -6,11 +6,15 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableCircuitBreaker
 @EnableHystrixDashboard
 @EnableEurekaServer
+@EnableFeignClients
+@ComponentScan(basePackageClasses = {at.spengergasse.emotionmatcher.spotifysongpicker.feign.SongFeignClient.class, at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient.class, at.spengergasse.emotionmatcher.emotionmatchermain.service.FeignClientService.class})
 public class EmotionmatchermainApplication {
 
     public static void main(String[] args) {
