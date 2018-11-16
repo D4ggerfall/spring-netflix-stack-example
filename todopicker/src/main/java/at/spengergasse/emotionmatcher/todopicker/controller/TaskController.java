@@ -46,4 +46,9 @@ public class TaskController
         taskService.deletebyId(id);
     }
 
+    @GetMapping(path = "/random/{importance}")
+    public Optional<Task> pickRandomSongByImportance(@PathVariable(name="importance") int importance){
+        return taskService.pickRandomTaskByImportance(importance);
+    }
+
 }
