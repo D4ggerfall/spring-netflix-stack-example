@@ -1,11 +1,11 @@
-package at.spengergasse.emotionmatcher.emotionmatchermain.controller;
+//package at.spengergasse.emotionmatcher.emotionmatchermain.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class CircuitBreakerController {
+//
+//@RestController
+//public class CircuitBreakerController {
 
     /*
     @RequestMapping(value = "/recommended")
@@ -14,5 +14,5 @@ public class CircuitBreakerController {
     }
     */
 
-}
+//}
 

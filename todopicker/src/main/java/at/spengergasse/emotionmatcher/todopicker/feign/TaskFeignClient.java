@@ -6,11 +6,10 @@ import feign.Param;
 import feign.RequestLine;
 //import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @FeignClient(name="task", configuration = FeignConfiguration.class, fallback = FallbackTask.class) //,url="http://localhost:8082/task/all"
 public interface TaskFeignClient {
@@ -28,4 +27,6 @@ public interface TaskFeignClient {
     @Headers("Content-Type: application/json")
     public Task creaTask(@RequestBody Task task);
 
+    @GetMapping(path = "/random/{importance}")
+    Optional<Task> randomTask(@PathVariable (name = "importance") int importance);
 }

@@ -1,27 +1,22 @@
 package at.spengergasse.emotionmatcher.emotionmatchermain.controller;
 
-import at.spengergasse.emotionmatcher.emotionmatchermain.service.FeignClientService;
-import at.spengergasse.emotionmatcher.spotifysongpicker.model.Song;
-import at.spengergasse.emotionmatcher.todopicker.model.Task;
+import at.spengergasse.emotionmatcher.emotionmatchermain.model.SongAndTask;
+import at.spengergasse.emotionmatcher.emotionmatchermain.service.SongAndTaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/feign")
+@RequestMapping(path = "/songandtask")
 public class FeignClientController {
 
     @Autowired
-    public FeignClientService feignClientService;
+    public SongAndTaskService songAndTaskService;
 
-    @GetMapping(path = "/all")
-    public @ResponseBody Optional<Song> findAll()
+    @GetMapping(path = "/{emotion}")
+    public @ResponseBody Optional<SongAndTask> pickSongAndTask(@PathVariable(name = "emotion") int emotionlevel)
     {
-        return feignClientService.getSongs();
+        return songAndTaskService.randomSongAndTaskByEmotionLevel(emotionlevel);
     }
 }

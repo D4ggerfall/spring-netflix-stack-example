@@ -1,5 +1,7 @@
 package at.spengergasse.emotionmatcher.emotionmatchermain;
 
+import at.spengergasse.emotionmatcher.spotifysongpicker.SpotifysongpickerApplication;
+import at.spengergasse.emotionmatcher.todopicker.TodopickerApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -13,11 +15,14 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableCircuitBreaker
 @EnableHystrixDashboard
 @EnableEurekaServer
-@EnableFeignClients
-@ComponentScan(basePackageClasses = {at.spengergasse.emotionmatcher.spotifysongpicker.feign.SongFeignClient.class, at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient.class, at.spengergasse.emotionmatcher.emotionmatchermain.service.FeignClientService.class})
+//@EnableFeignClients
+//@ComponentScan(basePackageClasses = {at.spengergasse.emotionmatcher.spotifysongpicker.feign.SongFeignClient.class, at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient.class, at.spengergasse.emotionmatcher.emotionmatchermain.service.FeignClientService.class})
 public class EmotionmatchermainApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(EmotionmatchermainApplication.class, args);
+//        SpringApplication.run(TodopickerApplication.class, args);
+//        SpringApplication.run(SpotifysongpickerApplication.class, args);
     }
 }
