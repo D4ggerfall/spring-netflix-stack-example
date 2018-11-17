@@ -15,7 +15,7 @@ public class FeignClientController {
     public SongAndTaskService songAndTaskService;
 
     @GetMapping(path = "/{emotion}")
-    public @ResponseBody Optional<SongAndTask> pickSongAndTask(@PathVariable(name = "emotion") int emotionlevel)
+    public Optional<SongAndTask> pickSongAndTask(@PathVariable(name = "emotion") int emotionlevel)
     {
         return songAndTaskService.randomSongAndTaskByEmotionLevel(emotionlevel);
     }
