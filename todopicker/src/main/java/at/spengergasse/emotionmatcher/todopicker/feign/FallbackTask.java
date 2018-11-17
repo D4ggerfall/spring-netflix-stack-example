@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-@Component
 public class FallbackTask implements TaskFeignClient {
     @Override
     public Iterable<Task> findAll() {
@@ -21,5 +21,10 @@ public class FallbackTask implements TaskFeignClient {
     @Override
     public Task creaTask(Task task) {
         return null;
+    }
+
+    @Override
+    public Optional<Task> randomTask(int importance) {
+        return Optional.empty();
     }
 }

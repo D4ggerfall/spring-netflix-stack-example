@@ -4,13 +4,12 @@ import at.spengergasse.emotionmatcher.spotifysongpicker.model.Song;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
-@FeignClient(name = "song", fallback = FallbackSong.class, configuration = SongConfiguration.class)
+@FeignClient(name = "songs", fallback = FallbackSong.class, url = "http://localhost:8081/songs")
 public interface SongFeignClient {
 
     @GetMapping("/random/{emotionLevel}")
-    Optional<Song> ramdomSong(@PathVariable(name="emotionLevel") int emotionLevel);
+    Optional<Song> ramdomSong(@PathVariable(value="emotionLevel") int emotionLevel);
 }

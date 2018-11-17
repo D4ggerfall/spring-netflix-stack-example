@@ -16,9 +16,12 @@ import java.util.Optional;
 @Service
 @Transactional
 public class SongAndTaskService {
-    private final SongFeignClient songFeignClient;
 
-    private final TaskFeignClient taskFeignClient;
+    @Autowired
+    private SongFeignClient songFeignClient;
+
+    @Autowired
+    private TaskFeignClient taskFeignClient;
 
     public Optional<SongAndTask> randomSongAndTaskByEmotionLevel(int emotionlevel){
         Song song = songFeignClient.ramdomSong(emotionlevel).get();

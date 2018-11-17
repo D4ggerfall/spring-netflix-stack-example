@@ -6,12 +6,13 @@ import feign.Param;
 import feign.RequestLine;
 //import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@FeignClient(name="task", configuration = FeignConfiguration.class, fallback = FallbackTask.class) //,url="http://localhost:8082/task/all"
+@FeignClient(name="task", configuration = FeignConfiguration.class, fallback = FallbackTask.class, url="http://localhost:8082/task/")
 public interface TaskFeignClient {
 
 
