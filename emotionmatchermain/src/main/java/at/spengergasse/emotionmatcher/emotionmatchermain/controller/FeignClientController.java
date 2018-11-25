@@ -18,6 +18,12 @@ public class FeignClientController {
     public Optional<SongAndTask> pickSongAndTask(@PathVariable(name = "emotion") int emotionlevel)
     {
         return songAndTaskService.randomSongAndTaskByEmotionLevel(emotionlevel);
-      //  return songAndTaskService.ramdomSong(emotionlevel);
+        //  return songAndTaskService.ramdomSong(emotionlevel);
+    }
+
+    @GetMapping(path = "/test")
+    public String aa()
+    {
+        return "GHallo";
     }
 }

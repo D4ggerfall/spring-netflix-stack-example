@@ -10,9 +10,9 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
-//@ComponentScan(basePackageClasses = {
-//        at.spengergasse.emotionmatcher.spotifysongpicker.feign.SongFeignClient.class,
-//        at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient.class,})
+@ComponentScan(basePackageClasses = {
+        at.spengergasse.emotionmatcher.spotifysongpicker.feign.SongFeignClient.class,
+        at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient.class,})
 @SpringBootApplication
 @EnableFeignClients
 @EnableEurekaClient

@@ -6,57 +6,33 @@ import at.spengergasse.emotionmatcher.spotifysongpicker.model.Song;
 import at.spengergasse.emotionmatcher.spotifysongpicker.service.SongService;
 import at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient;
 import at.spengergasse.emotionmatcher.todopicker.model.Task;
+import at.spengergasse.emotionmatcher.todopicker.service.TaskService;
+import feign.Feign;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-//@RequiredArgsConstructor
 @Service
-//@Transactional
-public class SongAndTaskService implements  SongFeignClient, TaskFeignClient {
-
-//    @Autowired
-//    private SongFeignClient songFeignClient;
-//
-//    @Autowired
-//    private TaskFeignClient taskFeignClient;
+@RequiredArgsConstructor
+@Transactional
+public class SongAndTaskService {
 
     @Autowired
-    private SongService songService;
+    private SongFeignClient songFeignClient;
 
-    public Optional<SongAndTask> randomSongAndTaskByEmotionLevel(int emotionlevel){
-        Song song =ramdomSong(emotionlevel).get();
-        Task task =randomTask(emotionlevel).get();
-        return Optional.of(new SongAndTask(song,task));
+    @Autowired
+    private TaskFeignClient taskFeignClient;
+
+
+    public Optional<SongAndTask> randomSongAndTaskByEmotionLevel(int emotionlevel) {
+        Song song = songFeignClient.ramdomSong(emotionlevel).get();
+        Task task = taskFeignClient.randomTask(emotionlevel).get();
+        return Optional.of(new SongAndTask(song, task));
     }
 
-    @Override
-    public Optional<Song> ramdomSong(int emotionLevel) {
-        songService.randomSongByEmotionLevel(emotionLevel);
-        return Optional.of(null);
-    }
-
-    @Override
-    public Iterable<Task> findAll() {
-        return null;
-    }
-
-    @Override
-    public Task findById(long id) {
-        return null;
-    }
-
-    @Override
-    public Task creaTask(Task task) {
-        return null;
-    }
-
-    @Override
-    public Optional<Task> randomTask(int importance) {
-        return Optional.empty();
-    }
 }
