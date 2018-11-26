@@ -14,23 +14,22 @@ import java.util.List;
 import java.util.Optional;
 
 @JsonFormat
-@FeignClient(name="task", configuration = FeignConfiguration.class, fallback = FallbackTask.class, url="http://localhost:8082/task/")
+@FeignClient(name = "task", configuration = FeignConfiguration.class, fallback = FallbackTask.class, url = "http://localhost:8082/task/")
 public interface TaskFeignClient {
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/all")
     Iterable<Task> findAll();
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{id}",consumes = "application/json")
+    @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     @Headers("Content-Type: application/json")
     Task findById(@Param("id") long id);
 
-   // @RequestMapping(method = RequestMethod.GET, value = "{id}")
+    // @RequestMapping(method = RequestMethod.GET, value = "{id}")
 
     @RequestMapping(method = RequestMethod.POST, path = "create")
     @Headers("Content-Type: application/json")
     public Task creaTask(@RequestBody Task task);
 
     @GetMapping(path = "/random/{importance}")
-    Optional<Task> randomTask(@PathVariable (name = "importance") int importance);
+    Optional<Task> randomTask(@PathVariable(name = "importance") int importance);
 }

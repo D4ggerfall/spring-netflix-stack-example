@@ -13,43 +13,38 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/task")
 @JsonFormat
-public class TaskController
-{
+public class TaskController {
     @Autowired
     public TaskService taskService;
 
 
     @GetMapping(path = "/all")
-    public @ResponseBody Iterable<Task> findAll()
-    {
+    public @ResponseBody
+    Iterable<Task> findAll() {
         return taskService.returnTask();
     }
 
 
-
-    @GetMapping(path="/{id}")
+    @GetMapping(path = "/{id}")
     public @ResponseBody
-    Optional<Task> findById(@PathVariable(name = "id") long id)
-    {
+    Optional<Task> findById(@PathVariable(name = "id") long id) {
         return taskService.findbyId(id);
     }
 
 
     @PostMapping(path = "/create")
-    public Task createTask(Task task)
-    {
+    public Task createTask(Task task) {
         return taskService.createTask(task);
     }
 
 
-    @DeleteMapping(path="/deleteId/{id}")
-    public void deletebyIdOTask(@PathVariable(name = "id")long id)
-    {
+    @DeleteMapping(path = "/deleteId/{id}")
+    public void deletebyIdOTask(@PathVariable(name = "id") long id) {
         taskService.deletebyId(id);
     }
 
     @GetMapping(path = "/random/{importance}")
-    public Optional<Task> pickRandomSongByImportance(@PathVariable(name="importance") int importance){
+    public Optional<Task> pickRandomSongByImportance(@PathVariable(name = "importance") int importance) {
         return taskService.pickRandomTaskByImportance(importance);
     }
 

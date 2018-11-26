@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableCircuitBreaker
 @EnableFeignClients
 public class FeignConfiguration {
-   // public static final int FIVE_SECONDS = 5000;
+    // public static final int FIVE_SECONDS = 5000;
 
     @Bean
-    public Logger.Level logLevel(){
+    public Logger.Level logLevel() {
         return Logger.Level.FULL;
     }
 /*

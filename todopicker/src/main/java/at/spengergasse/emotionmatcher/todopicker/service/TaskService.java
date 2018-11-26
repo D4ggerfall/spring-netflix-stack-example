@@ -11,40 +11,36 @@ import java.util.Optional;
 import java.util.Random;
 
 @Service
-public class TaskService
-{
+public class TaskService {
+
     @Autowired
     private TaskRepository taskRepository;
 
-    public Iterable<Task> returnTask()
-    { return taskRepository.findAll(); }
+    public Iterable<Task> returnTask() {
+        return taskRepository.findAll();
+    }
 
-    public Optional<Task> findbyId(long id)
-    {
+    public Optional<Task> findbyId(long id) {
         return taskRepository.findById(id);
     }
 
-    public Task createTask(Task task)
-    {
+    public Task createTask(Task task) {
         return taskRepository.save(task);
     }
 
-    public void deleteTask(Task task)
-    {
+    public void deleteTask(Task task) {
         taskRepository.delete(task);
     }
 
-    public void deletebyId(long id)
-    {
+    public void deletebyId(long id) {
         taskRepository.deleteById(id);
     }
 
-    public void deleteAll()
-    {
+    public void deleteAll() {
         taskRepository.deleteAll();
     }
 
-    public Optional<Task> pickRandomTaskByImportance(int importance){
+    public Optional<Task> pickRandomTaskByImportance(int importance) {
         Random rnd = new Random();
         List<Task> taskList = taskRepository.findByImportance(importance);
         return Optional.of(taskList.get(rnd.nextInt(taskList.size())));

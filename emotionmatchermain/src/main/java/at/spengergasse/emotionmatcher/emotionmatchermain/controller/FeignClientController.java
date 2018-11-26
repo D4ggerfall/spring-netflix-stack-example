@@ -5,6 +5,7 @@ import at.spengergasse.emotionmatcher.emotionmatchermain.service.SongAndTaskServ
 import at.spengergasse.emotionmatcher.spotifysongpicker.model.Song;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -18,7 +19,7 @@ public class FeignClientController {
     @Autowired
     public SongAndTaskService songAndTaskService;
 
-    @GetMapping(path = "/{emotionLevel}")
+    @GetMapping(path = "/{emotionLevel}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public Optional<SongAndTask> pickSongAndTask(@PathVariable(name = "emotionLevel") int emotionlevel)
     {
         return songAndTaskService.randomSongAndTaskByEmotionLevel(emotionlevel);
