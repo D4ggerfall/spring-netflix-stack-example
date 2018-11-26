@@ -12,7 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackageClasses = {
         at.spengergasse.emotionmatcher.spotifysongpicker.feign.SongFeignClient.class,
-        at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient.class,})
+        at.spengergasse.emotionmatcher.todopicker.feign.TaskFeignClient.class,
+at.spengergasse.emotionmatcher.emotionmatchermain.EmotionmatchermainApplication.class})
 @SpringBootApplication
 @EnableFeignClients
 @EnableEurekaClient

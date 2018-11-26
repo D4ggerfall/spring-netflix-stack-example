@@ -28,7 +28,7 @@
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
+        </properties>
 
     <dependencies>
         <dependency>

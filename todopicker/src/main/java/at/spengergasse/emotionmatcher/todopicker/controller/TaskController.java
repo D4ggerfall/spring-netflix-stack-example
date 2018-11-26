@@ -3,6 +3,7 @@ package at.spengergasse.emotionmatcher.todopicker.controller;
 
 import at.spengergasse.emotionmatcher.todopicker.model.Task;
 import at.spengergasse.emotionmatcher.todopicker.service.TaskService;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/task")
+@JsonFormat
 public class TaskController
 {
     @Autowired

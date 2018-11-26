@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 
 import javax.persistence.Entity;
+import java.io.Serializable;
 
 
 @AllArgsConstructor
-@Data
 @Builder
-public class SongAndTask{
+@Data
+public class SongAndTask implements Serializable {
 
     @Autowired
     private Song song;

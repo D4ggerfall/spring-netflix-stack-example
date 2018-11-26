@@ -2,6 +2,7 @@ package at.spengergasse.emotionmatcher.spotifysongpicker.controller;
 
 import at.spengergasse.emotionmatcher.spotifysongpicker.model.Song;
 import at.spengergasse.emotionmatcher.spotifysongpicker.service.SongService;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/songs")
+@JsonFormat
 public class SongController {
 
     @Autowired
